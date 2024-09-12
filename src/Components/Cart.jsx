@@ -11,6 +11,10 @@ const Cart = () => {
   }, [cart]);
 
   const handleChange = (e, item) => {
+    if(e.target.value > item.rating.count){
+      e.target.value=item.rating.count;
+        alert(`out of stock!!! choose below ${item.rating.count}`)
+    }
     const updatedCart = localCart.map(cartItem =>
       cartItem.id === item.id
         ? { ...cartItem, totalPrice: (e.target.value * cartItem.price).toFixed(2), quantity: e.target.value }

@@ -18,7 +18,7 @@ const App = () => {
     category: "men's clothing",
     image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
     rating: {
-     rate: 3.,
+     rate: 3.9,
      count: 120
     }
   },
@@ -30,7 +30,7 @@ const App = () => {
     category: "men's clothing",
     image: "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
     rating: {
-     rate: 4.,
+     rate: 4.1,
      count: 259
     }
   },
@@ -42,7 +42,7 @@ const App = () => {
     category: "men's clothing",
     image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
     rating: {
-     rate: 4.,
+     rate: 4.7,
      count: 500
     }
   },
@@ -54,7 +54,7 @@ const App = () => {
     category: "men's clothing",
     image: "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
     rating: {
-     rate: 2.,
+     rate: 2.1,
      count: 430
     }
   },
@@ -66,7 +66,7 @@ const App = () => {
     category: "jewelery",
     image: "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
     rating: {
-     rate: 4.,
+     rate: 4.6,
      count: 400
     }
   },
@@ -78,7 +78,7 @@ const App = () => {
     category: "jewelery",
     image: "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
     rating: {
-     rate: 3.,
+     rate: 3.9,
      count: 70
     }
   },
@@ -102,7 +102,7 @@ const App = () => {
     category: "jewelery",
     image: "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
     rating: {
-     rate: 1.,
+     rate: 1.9,
      count: 100
     }
   },
@@ -114,7 +114,7 @@ const App = () => {
     category: "electronics",
     image: "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
     rating: {
-     rate: 3.,
+     rate: 3.3,
      count : 203
     }
   },

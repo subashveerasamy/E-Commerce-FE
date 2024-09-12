@@ -8,7 +8,7 @@ import MyContext from '../Context/MyContext'
 const Home = () => {
     const {cards, setCards}=useContext(productInfo);
     const {cart, setCart}=useContext(MyContext)
-    //console.log("Home:",cart)
+    
    
     
   return (

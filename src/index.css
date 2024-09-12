@@ -1,0 +1,40 @@
+@media screen and (min-width:1000px) {
+  #laptopView{
+      
+      display: block;
+  }
+  #padView{
+    display: none;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  #laptopView{
+      
+      display: none;
+  }
+  #padView{
+    display: block;
+  }
+
+}
+
+#multiline-ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#multiline-ellipsis-cart {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+

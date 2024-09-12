@@ -48,7 +48,7 @@ const Test=({item})=> {
 
     return (
         <div className='text-center'>
-            <button className='btn btn-outline-secondary' onClick={handleClick}>
+            <button className={`btn ${ buttonText === 'Remove from cart' ? 'btn-danger text-light' : 'btn-outline-secondary'}`}  onClick={handleClick}>
                 {buttonText}</button>
         </div>
     );

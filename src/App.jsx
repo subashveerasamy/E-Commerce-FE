@@ -41,7 +41,7 @@ const App = () => {
         if(cartproducts ){
           
           setCart(cartproducts.data.cart)
-          //console.log(cartproducts.data.cart)
+          
         }
       }
       

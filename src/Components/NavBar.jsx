@@ -10,6 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import {  ThemeProvider } from '@mui/material';
 import styled from 'styled-components';
 import NavMiddle from './NavMiddle.jsx';
+import productInfo from '../Context/productsInfo';
 
 const ShortSearch = styled.div`
 display: none;
@@ -25,6 +26,7 @@ display: none;
 
 const NavBar = ({miniSearchClick, setMiniSearchClick, searchCard}) => {
   const { cart, setCart } = useContext(MyContext);
+  const {cards, setCards}=useContext(productInfo);
   const navigate = useNavigate();
   const [drawerOpen, setDrawerOpen] = useState(false);
 
@@ -100,6 +102,37 @@ const NavBar = ({miniSearchClick, setMiniSearchClick, searchCard}) => {
     }
   }, [isBigScreen]);
 
+  const [search, setSearch]= useState('');
+
+  
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+
+   
+    setSearch(e.target.value);
+    
+    
+
+      let searchResult=searchCard.filter((item) => {
+        if (item.title.toLowerCase().includes(e.target.value)) {
+          return item;
+        }
+      });
+      setCards(searchResult);
+    
+        
+
+  };
+
+
+  const navigateSearch = (e) => {
+    e.preventDefault();
+    
+    navigate("/App");
+    
+  }
+
 
 
   return (
@@ -108,12 +141,16 @@ const NavBar = ({miniSearchClick, setMiniSearchClick, searchCard}) => {
           <div style={{ minWidth: "10rem", maxWidth:"15rem" }}>
           { miniSearchClick ?
               (
-                <ThemeProvider theme={themed}>
+                <form onSubmit={navigateSearch}>
+                  <ThemeProvider theme={themed}>
                 <TextField
                 className='mb-3'
                   id="standard-basic"
                   label="Search"
                   variant="standard"
+                  onChange={handleSearch}
+                  value={search}
+                  type='text'
                   InputProps={{
                     endAdornment: (
                       <IconButton type="button" aria-label="search" sx={{ color: "white" }}>
@@ -144,6 +181,7 @@ const NavBar = ({miniSearchClick, setMiniSearchClick, searchCard}) => {
                   }}
                 />
               </ThemeProvider>
+                </form>
               ) : <div className='text-light' ><h3>Aura Avenue</h3></div>
             }
             

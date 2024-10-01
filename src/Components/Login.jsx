@@ -22,7 +22,7 @@ const Login = () => {
     const loginUser=async()=>{
       try {
      
-        const response=await axios.post("http://localhost:5000/user/login",{email,password});
+        const response=await axios.post("https://e-commerce-be-828a.onrender.com/user/login",{email,password});
         if(response.data.message === "Login successful"){
          
           

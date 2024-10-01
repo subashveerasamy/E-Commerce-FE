@@ -19,7 +19,7 @@ const App = () => {
       console.log("App");
       const fetchProducts= async()=>{
         
-      const products= await axios.get("http://localhost:5000/products/getProducts");
+      const products= await axios.get("https://e-commerce-be-828a.onrender.com/products/getProducts");
       if(products){
       setCards(products.data.data);
       setSearchCard(products.data.data);
@@ -30,7 +30,7 @@ const App = () => {
 
       const getCart=async()=>{
         console.log(sessionStorage.getItem("token"));
-                const cartproducts=await axios.get("http://localhost:5000/user/getcart",{
+                const cartproducts=await axios.get("https://e-commerce-be-828a.onrender.com/user/getcart",{
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`
           }

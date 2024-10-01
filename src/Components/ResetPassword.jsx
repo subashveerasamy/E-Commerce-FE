@@ -46,7 +46,7 @@ const ResetPassword = () => {
 
     const resetPassword = async () => {
         const email = params.email;
-        const response = await axios.put("https://day41taskbe-1.onrender.com/user/resetPassword", { email, password });
+        const response = await axios.put("https://e-commerce-be-828a.onrender.com/user/resetPassword", { email, password });
         alert(response.data.message);
         if (response.data.message === "Password Changed successfully") {
             navigate('/');

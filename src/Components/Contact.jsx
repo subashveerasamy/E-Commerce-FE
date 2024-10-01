@@ -40,7 +40,7 @@ const Contact = () => {
     else {
       formData.category = dropdown;
       
-      axios.post("http://localhost:5000/user/query", {category:formData.category, query:formData.query}, {
+      axios.post("https://e-commerce-be-828a.onrender.com/user/query", {category:formData.category, query:formData.query}, {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem('token')}`
         }

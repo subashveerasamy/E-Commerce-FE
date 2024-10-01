@@ -24,7 +24,7 @@ const Test = ({ item }) => {
 
     const updateCart = async (updatedCart) => {
         try {
-            const response = await axios.put('http://localhost:5000/user/updateCart', { cart: updatedCart },
+            const response = await axios.put('https://e-commerce-be-828a.onrender.com/user/updateCart', { cart: updatedCart },
                 {
                     headers: {
                       Authorization: `Bearer ${sessionStorage.getItem("token")}`

@@ -13,7 +13,7 @@ const PersonalDetails = () => {
         })
         useEffect(()=>{
             const fetchData=()=>{
-                const personalInfos=axios.get("http://localhost:5000/user/getPersonalInfo",{
+                const personalInfos=axios.get("https://e-commerce-be-828a.onrender.com/user/getPersonalInfo",{
                     headers:{
                         Authorization:`Bearer ${sessionStorage.getItem("token")}`
                     }
@@ -31,7 +31,7 @@ const PersonalDetails = () => {
             e.preventDefault();
             console.log(personalInfo);
             const updateInfo= async()=>{
-            const response=await axios.put("http://localhost:5000/user/updatePersonalInfo",{personalInfo},
+            const response=await axios.put("https://e-commerce-be-828a.onrender.com/user/updatePersonalInfo",{personalInfo},
                 {
                     headers:{
                         Authorization:`Bearer ${sessionStorage.getItem("token")}`

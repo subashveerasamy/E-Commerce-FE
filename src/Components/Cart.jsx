@@ -24,7 +24,7 @@ const Cart = () => {
           
           const quantity = parseInt(item.quantity) || 1;
           
-          const response = await axios.get(`http://localhost:5000/products/getProductById/${item._id}`);
+          const response = await axios.get(`https://e-commerce-be-828a.onrender.com/products/getProductById/${item._id}`);
           const totalPrice = (quantity * response.data.data.price).toFixed(2);
 
           return {...response.data.data, quantity, totalPrice};
@@ -49,7 +49,7 @@ const Cart = () => {
         : cartItem
     );
     const updateUserCart=async()=>{
-      const response=await axios.put("http://localhost:5000/user/updateCart",{cart:updatedCart},
+      const response=await axios.put("https://e-commerce-be-828a.onrender.com/user/updateCart",{cart:updatedCart},
         {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`
@@ -71,7 +71,7 @@ const Cart = () => {
   const handleRemoveButton = async(item) => {
     const updatedCart = localCart.filter(cartItem => cartItem._id !== item._id);
     setLocalCart(updatedCart);
-    const response = await axios.put("http://localhost:5000/user/updateCart", {cart: updatedCart},
+    const response = await axios.put("https://e-commerce-be-828a.onrender.com/user/updateCart", {cart: updatedCart},
       {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`

@@ -23,7 +23,7 @@ const ResetPasswordPage1 = () => {
 }
 
 const checkuser = async()=>{
-    const response = await axios.get(`http://localhost:5000/user/checkUser/${email}`)
+    const response = await axios.get(`https://e-commerce-be-828a.onrender.com/user/checkUser/${email}`)
    if(response.data.message === "Email found"){
     setMessage(response.data.message);
     navigate(`/resetpassword/${email}`);

@@ -59,7 +59,7 @@ const OrderPlace = ({localCart, setLocalCart}) => {
               pincode,
               mobile
             }
-              const postorder=await axios.post("http://localhost:5000/order/newOrder",{order,totalQuantity:quantity,totalAmount:price, deliveryAddress},
+              const postorder=await axios.post("https://e-commerce-be-828a.onrender.com/order/newOrder",{order,totalQuantity:quantity,totalAmount:price, deliveryAddress},
                 {
                   headers: {
                     Authorization: `Bearer ${sessionStorage.getItem("token")}`
@@ -67,7 +67,7 @@ const OrderPlace = ({localCart, setLocalCart}) => {
                 }
               )
               alert("Order Placed Successfully");
-              const removeFromCart = await axios.put("http://localhost:5000/user/updateCart", {cart: []},
+              const removeFromCart = await axios.put("https://e-commerce-be-828a.onrender.com/user/updateCart", {cart: []},
                 {
                   headers: {
                     Authorization: `Bearer ${sessionStorage.getItem("token")}`

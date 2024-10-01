@@ -44,7 +44,7 @@ useEffect(() => {
     const fetchOrders = async () => {
         
         try {
-            const response = await axios.get("http://localhost:5000/order/getOrders",
+            const response = await axios.get("https://e-commerce-be-828a.onrender.com/order/getOrders",
                 {
                     headers: {
                       Authorization: `Bearer ${sessionStorage.getItem("token")}`
@@ -65,7 +65,7 @@ useEffect(() => {
                 const order = eachOrder.order;
                 const updatedOrder = await Promise.all(order.map(async (item) => {
                     
-                    const response = await axios.get(`http://localhost:5000/products/getProductById/${item.productId}`);
+                    const response = await axios.get(`https://e-commerce-be-828a.onrender.com/products/getProductById/${item.productId}`);
                     
                     if(response){
                         item.title = response.data.data.title;
@@ -151,7 +151,7 @@ const handleUpdateAddress=async()=>{
     
     
         
-        const response = await axios.put("http://localhost:5000/order/updateDeliveryAddress",{deliveryAddress, orderId:delivery.orderId},
+        const response = await axios.put("https://e-commerce-be-828a.onrender.com/order/updateDeliveryAddress",{deliveryAddress, orderId:delivery.orderId},
             {
                 headers: {
                   Authorization: `Bearer ${sessionStorage.getItem("token")}`
@@ -178,7 +178,7 @@ const handleSubmit = (e) => {
 
 const handleCancelOrder= async()=>{
     setButtonStatus('cancel');
-    const response=await axios.put("http://localhost:5000/order/updateOrder",{orderId:delivery.orderId, status:'cancelled'},
+    const response=await axios.put("https://e-commerce-be-828a.onrender.com/order/updateOrder",{orderId:delivery.orderId, status:'cancelled'},
         {
             headers: {
               Authorization: `Bearer ${sessionStorage.getItem("token")}`
@@ -227,7 +227,7 @@ const handleReviewSubmit= async(e) => {
     else if(comments === '')
         alert('give comments')
     else{
-        const response=await axios.put(`http://localhost:5000/products/addReview/${selectedReviewProduct}` ,{rating, comments},
+        const response=await axios.put(`https://e-commerce-be-828a.onrender.com/products/addReview/${selectedReviewProduct}` ,{rating, comments},
 
             {
                 headers: {

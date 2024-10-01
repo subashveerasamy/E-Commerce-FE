@@ -33,8 +33,8 @@ const Login = () => {
         if(response.data.message === "Email not found"){
           alert("Email not found");
         }
-        if(response.data.message === "Invalid password! password reset mail sent!!"){
-          alert("Invalid password! password reset mail sent!!");
+        if(response.data.message === "Invalid credentials"){
+          alert("Invalid credentials");
         }
         
       } catch (error) {

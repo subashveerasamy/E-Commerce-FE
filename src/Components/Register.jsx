@@ -52,12 +52,12 @@ const Register = () => {
   const userRegister = async () => {
    try {
     const response = await axios.post("https://e-commerce-be-828a.onrender.com/user/register", { username, email, password });
-    console.log(response.data.message);
+    
     if (response.data.message === "User registered successfully") {
       navigate("/");
-    } else if (response.data.message === "Email Already Exists") {
+    } else if (response.data.message === "User already exists") {
       alert("Email Already Exists");
-    } else if (response.data.message === "Username Already Exists") {
+    } else if (response.data.message === "Username already exists") {
       alert("Username Already Exists");
     }
    } catch (error) {

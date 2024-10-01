@@ -1,57 +1,63 @@
 import React, { useContext, useEffect, useState } from 'react';
 import MyContext from '../Context/MyContext';
-const Test=({item})=> {
+import axios from 'axios';
+
+const Test = ({ item }) => {
     const [buttonText, setButtonText] = useState('');
-    const {cart, setCart}=useContext(MyContext);
-     useEffect(() => {
-        let flag=0;
-         cart.map((value, index)=>
-        {
-            if(value.id === item.id){
-                flag=1;
+    const { cart, setCart } = useContext(MyContext);
+
+    useEffect(() => {
+        let flag = 0;
+       
+        cart.forEach((value) => {
+            if (value._id === item._id) {
+                flag = 1;
                 setButtonText('Remove from cart');
             }
-        })
-        
-        if(flag===0) {
+        });
+
+        if (flag === 0) {
             setButtonText('Add to cart');
         }
-    }, [cart, item]);
-    
 
+    }, [cart]);
+
+    const updateCart = async (updatedCart) => {
+        try {
+            const response = await axios.put('http://localhost:5000/user/updateCart', { cart: updatedCart },
+                {
+                    headers: {
+                      Authorization: `Bearer ${sessionStorage.getItem("token")}`
+                    }
+                  }
+            );
+           
+        } catch (error) {
+            console.error('Error updating cart:', error);
+        }
+    };
 
     const handleClick = () => {
-        
-         if(buttonText === 'Add to cart'){
-            item.totalPrice=item.price;
-            item.quantity=1;
-            setCart([...cart,item])
-           
-             //setButtonText(buttonText === 'Add to cart' ? 'Remove from cart' : 'Add to cart');
-       
+        let updatedCart;
+        if (buttonText === 'Add to cart') {
+            item.totalPrice = item.price;
+            updatedCart = [...cart, item];
+            setCart(updatedCart);
+        } else {
+            updatedCart = cart.filter((value) => value._id !== item._id);
+            setCart(updatedCart);
         }
-        else{
-            cart.map((value, index)=>
-            {
-                if(value.id === item.id){
-                    cart.splice(index, 1)
-                }
-            })
-            setCart([...cart])
-             //setButtonText(buttonText === 'Add to cart' ? 'Remove from cart' : 'Add to cart');
-       
-        }
-        
-       
-        
+        // console.log(cart);
+        updateCart(updatedCart);
     };
 
     return (
         <div className='text-center'>
-            <button className={`btn ${ buttonText === 'Remove from cart' ? 'btn-danger text-light' : 'btn-outline-secondary'}`}  onClick={handleClick}>
-                {buttonText}</button>
+            <button className={`btn ${buttonText === 'Remove from cart' ? 'btn-danger text-light' : 'btn-outline-secondary'}`} onClick={handleClick}>
+                {buttonText}
+            </button>
         </div>
     );
-}
+};
 
 export default Test;

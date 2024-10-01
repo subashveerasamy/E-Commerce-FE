@@ -12,8 +12,8 @@ const Home = () => {
    
     
   return (
-    <div> <Banner/>
-    <div className="container px-4 px-lg-5 mt-5">
+    <div className='d-flex flex-column align-items-center' style={{minWidth:"100vw", paddingTop:"80px"}}> <Banner/>
+    <div className="container px-4 px-lg-5 mt-5 " >
     
   <Products/>
    </div>

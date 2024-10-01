@@ -8,22 +8,58 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import Cart from './Components/Cart.jsx'
 import Home from './Components/Home.jsx'
+import Orders from './Components/Orders.jsx'
+import Login from './Components/Login.jsx'
+import Register from './Components/Register.jsx'
+import ResetPasswordPage1 from './Components/ResetPasswordPage1.jsx'
+import ResetPassword from './Components/ResetPassword.jsx'
+import Contact from './Components/Contact.jsx'
+import ProductDetails from './Components/ProductDetails.jsx'
+import PersonalDetails from './Components/PersonalDetails.jsx'
+
 
 const router=createBrowserRouter([
-    
-                {
-                    path:"/",
+                    {
+                            path:"/" ,
+                            element:<Login/>
+                    },
+                    {
+                        path:"/register",
+                        element:<Register />
+                    },{
+                        path:"/resetpassword",
+                        element:<ResetPasswordPage1 />
+                    },
+                    {
+                        path:"/resetpassword/:email",
+                        element:<ResetPassword />
+                    },
+                    {
+                     path:"/App",
                     element:<App />,
                     children:[{
-                        path:"/",
+                        path:"",
                         element:<Home/>
                     },
                         {
                         
-                            path:"/cart",
+                            path:"cart",
                             element:<Cart />
                         
-                    }]
+                    },
+                    {
+                            path:"personalDetails",
+                            element:<PersonalDetails/>
+                    },
+                    {
+                        path:"orders",
+                        element:<Orders/>
+                    },
+                    {
+                        path:"contact",
+                        element:<Contact/>
+                    }
+                ]
                 
                 }
             

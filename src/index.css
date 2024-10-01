@@ -1,23 +1,4 @@
-@media screen and (min-width:1000px) {
-  #laptopView{
-      
-      display: block;
-  }
-  #padView{
-    display: none;
-  }
-}
 
-@media screen and (max-width:1000px) {
-  #laptopView{
-      
-      display: none;
-  }
-  #padView{
-    display: block;
-  }
-
-}
 
 #multiline-ellipsis {
   display: -webkit-box;
@@ -34,6 +15,158 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+#cartQuantity{
+  align-items: end;
+  row-gap: 20px;
+  @media only screen and (max-width:1000px) {
+    width: 100%;
+    align-items: end;
+    
+  }
+}
+
+#cartCardTitle{
+  row-gap: 20px;
+ 
+}
+
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.7fr 1.9fr 0.7fr 0.7fr; /* Adjust the fractions as needed */
+  gap: 0px; /* Optional: Adds space between grid items */
+  row-gap: 0px;
+}
+
+.grid-item {
+  padding: 10px; /* Optional: Adds padding for better spacing */
+  border-bottom: 1px solid #ccc; /* Optional: Adds a border for visual separation */
+  
+}
+
+#cartItems{
+  background: rgb(18,3,38);
+background: radial-gradient(circle, rgba(18,3,38,1) 9%, rgba(22,50,58,1) 37%, rgba(15,6,27,1) 94%);
+}
+
+#cartPage{
+  background: rgb(18,3,38);
+  background: radial-gradient(circle, rgba(18,3,38,1) 9%, rgba(22,50,58,1) 37%, rgba(15,6,27,1) 94%);
+  }
+
+  #navBar{
+    background: rgb(18,3,38);
+background: linear-gradient(28deg, rgba(18,3,38,1) 9%, rgb(16, 2, 37) 34%, rgba(15,6,27,1) 94%);
+  }
+
+  #cartRemoveBtn:hover{
+    
+   
+    background-color: rgb(195, 1, 1);
+    
+    }
+  #orderPlaceBtn:hover,#updateAddressBtn:hover{
+      background-color: black;
+      color: yellow;
+  }
+
+  #cancelBtn:hover{
+    background-color: black;
+    color:red;
+  }
+
+  #setOpacity{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    z-index: 2;
+    
+  }
+
+#filter:hover{
+  background: #6bc9e1;
+  color: white;
+}
+.filter{
+  background: aqua;
+}
+
+#navBar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; 
+}
+
+
+
+#drawer:hover{
+
+  background: #778b90;
+
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+#mobileView {
+  @media screen and (max-width: 1000px) {
+   
+    min-width: 10rem;
+    max-width: 30rem;
+    position: absolute;
+    top: 30vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    color: black;
+    padding: 50px;
+    border-radius: 10px;
+
+   
+  }
+}
+
+
+
+#contact{
+  background-image:url('https://images.ctfassets.net/co0pvta7hzrh/4M77wuTXaUHAUtDfMQPpfe/d4c9d0e1b4513564c75e13bf42edc6cb/graphic-designer-job-application-form-thumbnail.png');
+  
+}
+
+#radio-group {
+  display: flex;
+  gap: 10px;
+}
+
+#radio-group input[type="radio"] {
+  display: none;
+}
+
+#radio-group label {
+  cursor: pointer;
+}
+
+#radio-group input[type="radio"]:checked + label img {
+  padding: 5px;
+  border: 5px solid #09b9ff; 
+}
+
+#loginPage, #registerPage, #passwordReset{
+  background-image:url('https://images.ctfassets.net/co0pvta7hzrh/4M77wuTXaUHAUtDfMQPpfe/d4c9d0e1b4513564c75e13bf42edc6cb/graphic-designer-job-application-form-thumbnail.png');
+  
+}
+
+
+
 
 
 

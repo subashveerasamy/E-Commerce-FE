@@ -36,8 +36,8 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 0.7fr 1.9fr 0.7fr 0.7fr; /* Adjust the fractions as needed */
-  gap: 0px; /* Optional: Adds space between grid items */
+  grid-template-columns: 0.7fr 0.7fr 1.9fr 0.7fr 0.7fr; 
+  gap: 0px; 
   row-gap: 0px;
 }
 

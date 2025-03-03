@@ -299,6 +299,9 @@ const filteredProducts = filter === 'all' ? orders : orders.filter(order => orde
                         </div>
                      <div className="grid-container p-3 border" id='cartItems' key={index} style={{borderRadius:"15px", boxShadow:"0 0 30px #0f061b", minWidth:"10rem", maxWidth:"60rem", cursor:"pointer"}}>
                     <div className="grid-item">S.No</div>
+                    <div className="grid-item">
+                      image
+                    </div>
                     <div className="grid-item" style={{
                           maxWidth:"20rem",
                           whiteSpace: "nowrap",
@@ -311,23 +314,32 @@ const filteredProducts = filter === 'all' ? orders : orders.filter(order => orde
                     {order.order.map((item, index) => (
                       <React.Fragment key={index}>
                         <div className="grid-item">{index + 1}</div>
+                       <div className="grid-item">
+                      
+                          <img width={50}  height={50} src={item.image} alt="productImage" />
+                          
+                          
+                       </div>
                         <div className="grid-item" style={{
                           maxWidth:"20rem",
                           whiteSpace: "nowrap",
                           overflow: "hidden",
                           textOverflow: "ellipsis"
-                        }}>{item.title}</div>
+                        }}>
+                        
+                          {item.title}</div>
                         <div className="grid-item" style={{textAlign:"center"}}>{item.quantity}</div>
-                        <div className="grid-item" style={{textAlign:"center"}}>${item.price}</div>
+                        <div className="grid-item" style={{textAlign:"center"}}>₹{item.price}</div>
                         
                       </React.Fragment>
                       
                     ))}
                   <div className="grid-item "></div>
+                  <div className="grid-item "></div>
                   <div className="grid-item ">Total</div>
                        
                         <div className="grid-item" style={{textAlign:"center"}}>{order.totalQuantity}</div>
-                        <div className="grid-item" style={{textAlign:"center"}}>${order.totalAmount}</div>
+                        <div className="grid-item" style={{textAlign:"center"}}>₹{order.totalAmount}</div>
                      
                   
                   </div>

@@ -135,7 +135,7 @@ const CartItem = ({ item, handleRemoveButton, handleChange, handleSubmit }) => {
               <label className='mx-3'>Quantity:</label>
               <input className='form-control' style={{ width: "5rem" }} type="number" value={item.quantity || 1} min={1} name='count' onChange={(e) => handleChange(e, item)} max={item.count} required />
             </div>
-            <div><label className='mx-3'>Price: </label> ${item.price}</div>
+            <div><label className='mx-3'>Price: </label> ₹{item.price}</div>
             <button id='cartRemoveBtn'
               className="btn btn-danger" 
               style={{ textAlign: "bottom", cursor: "pointer", border: "1px solid white", width: "5rem", borderRadius: "10px" }} 
@@ -148,7 +148,7 @@ const CartItem = ({ item, handleRemoveButton, handleChange, handleSubmit }) => {
         <hr />
         <div className='d-flex justify-content-between ms-5'>
           <div className='text-secondary'>SUBTOTAL</div>
-          <div className='text-secondary'>${item.totalPrice}</div>
+          <div className='text-secondary'>₹{item.totalPrice}</div>
         </div>
         <div className='d-flex justify-content-between ms-5'>
           <div className='text-secondary'>SHIPPING</div>
@@ -157,7 +157,7 @@ const CartItem = ({ item, handleRemoveButton, handleChange, handleSubmit }) => {
         <hr />
         <div className='d-flex justify-content-between ms-5'>
           <div>TOTAL</div>
-          <div>${item.totalPrice}</div>
+          <div>₹{item.totalPrice}</div>
         </div>
       </form>
     </div>

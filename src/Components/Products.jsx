@@ -28,7 +28,7 @@ const Products = () => {
  
 <div className="card-body">
    <h5 className="card-title text-center" id="multiline-ellipsis">{value.title}</h5>
-  <p className="card-text text-center" >  ${value.price}</p>
+  <p className="card-text text-center" >  ₹{value.price}</p>
   {/* <button className="btn btn-primary" onClick={() => handleButtonFunc(index)}>{value.status}</button> */}
   <Test item={value}  />
 

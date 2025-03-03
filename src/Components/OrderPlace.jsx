@@ -157,6 +157,9 @@ const OrderPlace = ({localCart, setLocalCart}) => {
           <div className='px-5 pb-5 d-flex flex-column align-items-center text-light '  style={{marginTop:"100px" , borderRadius:"15px"}}>
     <div className="grid-container p-3 border" id='cartItems' style={{borderRadius:"15px", boxShadow:"0 0 30px #0f061b", minWidth:"10rem", maxWidth:"60rem"}}>
     <div className="grid-item">S.No</div>
+    <div className="grid-item ">
+      image
+    </div>
     <div className="grid-item" style={{
           maxWidth:"20rem",
           whiteSpace: "nowrap",
@@ -169,6 +172,9 @@ const OrderPlace = ({localCart, setLocalCart}) => {
     {localCart.map((item, index) => (
       <React.Fragment key={index}>
         <div className="grid-item">{index + 1}</div>
+        <div className="grid-item ">
+          <img width={40} height={40} src={item.image} alt="" />
+        </div>
         <div className="grid-item" style={{
           maxWidth:"20rem",
           whiteSpace: "nowrap",
@@ -176,16 +182,17 @@ const OrderPlace = ({localCart, setLocalCart}) => {
           textOverflow: "ellipsis"
         }}>{item.title}</div>
         <div className="grid-item" style={{textAlign:"center"}}>{item.quantity}</div>
-        <div className="grid-item" style={{textAlign:"center"}}>${item.totalPrice}</div>
+        <div className="grid-item" style={{textAlign:"center"}}>₹{item.totalPrice}</div>
         
       </React.Fragment>
       
     ))}
   <div className="grid-item "></div>
+  <div className="grid-item "></div>
   <div className="grid-item ">Total</div>
        
         <div className="grid-item" style={{textAlign:"center"}}>{quantity}</div>
-        <div className="grid-item" style={{textAlign:"center"}}>${price.toFixed(2)}</div>
+        <div className="grid-item" style={{textAlign:"center"}}>₹{price.toFixed(2)}</div>
      
   
   </div>
